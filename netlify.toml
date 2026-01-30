@@ -26,9 +26,4 @@
   status = 200
 
 # Add global headers to handle CORS even if the app crashes or 404s
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "https://mediguidefront.netlify.app"
-    Access-Control-Allow-Headers = "*"
-    Access-Control-Allow-Methods = "*"
+
