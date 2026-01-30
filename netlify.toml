@@ -29,6 +29,6 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Origin = "https://mediguidefront.netlify.app"
     Access-Control-Allow-Headers = "*"
     Access-Control-Allow-Methods = "*"
