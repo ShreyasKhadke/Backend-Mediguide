@@ -38,13 +38,21 @@ app.add_middleware(
 )
 
 # Include routers
+# Include routers with /api/v1 prefix (Link backward compatibility / Local dev)
 app.include_router(reports.router, prefix=settings.API_V1_PREFIX)
 app.include_router(chat.router, prefix=settings.API_V1_PREFIX)
 app.include_router(family.router, prefix=settings.API_V1_PREFIX)
 app.include_router(premium.router, prefix=settings.API_V1_PREFIX)
 app.include_router(chatbot.router, prefix=settings.API_V1_PREFIX)
-app.include_router(chatbot.router, prefix=settings.API_V1_PREFIX)
 app.include_router(admin.router, prefix=settings.API_V1_PREFIX)
+
+# Include routers at Root (For Netlify where /api/v1 is stripped)
+app.include_router(reports.router, prefix="")
+app.include_router(chat.router, prefix="")
+app.include_router(family.router, prefix="")
+app.include_router(premium.router, prefix="")
+app.include_router(chatbot.router, prefix="")
+app.include_router(admin.router, prefix="")
 
 from pydantic import BaseModel
 
